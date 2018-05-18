@@ -55,14 +55,8 @@
 
 - block:
 
-    # No link creation is necessary on Mac OS X -- 
+    # No link creation is necessary on Mac OS X - 
     # the package installer automatically creates symlinks in /usr/bin.
-
-    - name: link "{{ java_install_dir }}/{{ java_default_link_name }}"
-      file:
-        dest: "{{ java_install_dir }}/{{ java_default_link_name }}"
-        src: "{{ java_install_dir }}/jdk{{ jdk_version }}"
-        state: link
 
     - name: alternatives link for "java"
       alternatives:
